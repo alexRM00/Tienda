@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
+//Implementar metodo para buscar producto
 
 class SearchField extends StatelessWidget {
   const SearchField({
@@ -25,7 +26,7 @@ class SearchField extends StatelessWidget {
             border: InputBorder.none,
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,
-            hintText: "Search product",
+            hintText: "Buscar producto",
             prefixIcon: Icon(Icons.search)),
       ),
     );

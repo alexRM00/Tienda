@@ -1,29 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:shop_app/screens/home/components/categoriaBotellas.dart';
+import 'package:shop_app/screens/home/components/categoriaCamisas.dart';
+import 'package:shop_app/screens/home/components/categoriaDeportes.dart';
+import 'package:shop_app/screens/home/components/categoriaMorral.dart';
 import '../../../size_config.dart';
 
 class Categories extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    void toCategory(categoria){
+      switch(categoria){
+        case "1" : Navigator.pushNamed(context, Botellas.routeName);
+        break;
+        case "2" : Navigator.pushNamed(context, Morral.routeName);
+        break;
+        case "3" : Navigator.pushNamed(context, Camisas.routeName);
+        break;
+        case "4" : Navigator.pushNamed(context, Deportes.routeName);
+        break;
+      }
+    }
     List<Map<String, dynamic>> categories = [
-      {"icon": "assets/icons/Flash Icon.svg", "text": "Flash Deal"},
-      {"icon": "assets/icons/Bill Icon.svg", "text": "Bill"},
-      {"icon": "assets/icons/Game Icon.svg", "text": "Game"},
-      {"icon": "assets/icons/Gift Icon.svg", "text": "Daily Gift"},
-      {"icon": "assets/icons/Discover.svg", "text": "More"},
+      {"icon": "assets/icons/botella.svg", "text": "Botellas","id":"1"},
+      {"icon": "assets/icons/backpack.svg", "text": "Morrales","id":"2"},
+      {"icon": "assets/icons/camisa.svg", "text": "Camisas","id":"3"},
+      {"icon": "assets/icons/deportes.svg", "text": "Deporte","id":"4"},
     ];
+
     return Padding(
       padding: EdgeInsets.all(getProportionateScreenWidth(20)),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: List.generate(
           categories.length,
           (index) => CategoryCard(
             icon: categories[index]["icon"],
             text: categories[index]["text"],
-            press: () {},
+            id: categories[index]["id"],
+            press: () => {toCategory(categories[index]["id"])},
           ),
         ),
       ),
@@ -37,9 +55,10 @@ class CategoryCard extends StatelessWidget {
     required this.icon,
     required this.text,
     required this.press,
+    required this.id,
   }) : super(key: key);
 
-  final String? icon, text;
+  final String? icon, text,id;
   final GestureTapCallback press;
 
   @override
@@ -61,7 +80,7 @@ class CategoryCard extends StatelessWidget {
               child: SvgPicture.asset(icon!),
             ),
             SizedBox(height: 5),
-            Text(text!, textAlign: TextAlign.center)
+            AutoSizeText(text!, textAlign: TextAlign.start,style: TextStyle(fontSize: 25),maxLines: 1,overflow: TextOverflow.ellipsis,)
           ],
         ),
       ),

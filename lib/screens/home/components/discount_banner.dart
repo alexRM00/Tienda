@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:carousel_slider/carousel_slider.dart';
 import '../../../size_config.dart';
 
 class DiscountBanner extends StatelessWidget {
@@ -9,33 +9,59 @@ class DiscountBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
       // height: 90,
-      width: double.infinity,
-      margin: EdgeInsets.all(getProportionateScreenWidth(20)),
-      padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(20),
-        vertical: getProportionateScreenWidth(15),
-      ),
-      decoration: BoxDecoration(
-        color: Color(0xFF4A3298),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Text.rich(
-        TextSpan(
-          style: TextStyle(color: Colors.white),
-          children: [
-            TextSpan(text: "A Summer Surpise\n"),
-            TextSpan(
-              text: "Cashback 20%",
-              style: TextStyle(
-                fontSize: getProportionateScreenWidth(24),
-                fontWeight: FontWeight.bold,
-              ),
+      padding: EdgeInsets.only(left: 10, right: 10),
+      child: Container(
+          height: 150.0,
+          width: double.infinity,
+          child: CarouselSlider(items: [
+            Container(
+              decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+              boxShadow: [BoxShadow(color: Colors.black38,
+              offset: Offset(2.0,2.0),
+              blurRadius:3.0,
+              spreadRadius: 2.0,
+              ),],
+              image: DecorationImage(image: AssetImage("assets/images/20220511_142306.jpeg"),
+              fit: BoxFit.cover,
+              )),
             ),
-          ],
+            Container(
+            decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+            boxShadow: [BoxShadow(color: Colors.black38,
+            offset: Offset(2.0,2.0),
+            blurRadius:3.0,
+            spreadRadius: 2.0,
+            ),],
+            image: DecorationImage(image: AssetImage("assets/images/playera_soycucei.png"),
+            fit: BoxFit.cover,
+            )),
+            ),
+            Container(
+            decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+            boxShadow: [BoxShadow(color: Colors.black38,
+            offset: Offset(2.0,2.0),
+            blurRadius:3.0,
+            spreadRadius: 2.0,
+            ),],
+            image: DecorationImage(image: AssetImage("assets/images/ps4_console_blue_1.png"),
+            fit: BoxFit.cover,
+            )),
+            ),
+          ], options: CarouselOptions(
+              height: 190.0,
+              autoPlay: true,
+              autoPlayCurve: Curves.easeInOut,
+              enlargeCenterPage: true,
+              autoPlayInterval: Duration(seconds: 3),
+              scrollDirection: Axis.horizontal,
+              ),
+          ),
         ),
-      ),
-    );
-  }
+      );
+    }
 }

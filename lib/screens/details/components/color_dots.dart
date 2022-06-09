@@ -5,7 +5,7 @@ import 'package:shop_app/models/Product.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
-class ColorDots extends StatelessWidget {
+class ColorDots extends StatefulWidget {
   const ColorDots({
     Key? key,
     required this.product,
@@ -14,31 +14,57 @@ class ColorDots extends StatelessWidget {
   final Product product;
 
   @override
+  State<ColorDots> createState() => _ColorDotsState();
+}
+
+class _ColorDotsState extends State<ColorDots> {
+  int numeroPrenda= 0;
+  @override
   Widget build(BuildContext context) {
-    // Now this is fixed and only for demo
-    int selectedColor = 3;
+    int selectedColor = 0;
+    addPrenda(){
+      setState(() {
+         numeroPrenda++;
+      });
+    }
+    lessPrenda(){
+      setState(() {
+        if(numeroPrenda!=0)
+          numeroPrenda--;
+      });
+    }
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Row(
         children: [
           ...List.generate(
-            product.colors.length,
+            widget.product.colors.length,
+            //implementar dot button para reconocer el color de la prenda
+            //y cada circulo encerrarlo en un margen negro
             (index) => ColorDot(
-              color: product.colors[index],
+              color: widget.product.colors[index],
               isSelected: index == selectedColor,
             ),
           ),
           Spacer(),
           RoundedIconBtn(
             icon: Icons.remove,
-            press: () {},
+            press: lessPrenda,
+          ),
+          SizedBox(width: getProportionateScreenWidth(20)),
+          Padding(
+            padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(2)),
+            child: Text('$numeroPrenda',
+              style: Theme.of(context).textTheme.headline6,
+            ),
           ),
           SizedBox(width: getProportionateScreenWidth(20)),
           RoundedIconBtn(
             icon: Icons.add,
             showShadow: true,
-            press: () {},
+            press: addPrenda,
           ),
         ],
       ),

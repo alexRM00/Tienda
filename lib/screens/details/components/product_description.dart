@@ -28,6 +28,14 @@ class ProductDescription extends StatelessWidget {
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
+        Padding(
+          padding:
+          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          child: Text("Existencia: "+
+            product.existencia.toString(),
+            style: Theme.of(context).textTheme.headline6,
+          ),
+        ),
         Align(
           alignment: Alignment.centerRight,
           child: Container(
@@ -59,30 +67,6 @@ class ProductDescription extends StatelessWidget {
             maxLines: 3,
           ),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(20),
-            vertical: 10,
-          ),
-          child: GestureDetector(
-            onTap: () {},
-            child: Row(
-              children: [
-                Text(
-                  "See More Detail",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600, color: kPrimaryColor),
-                ),
-                SizedBox(width: 5),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 12,
-                  color: kPrimaryColor,
-                ),
-              ],
-            ),
-          ),
-        )
       ],
     );
   }

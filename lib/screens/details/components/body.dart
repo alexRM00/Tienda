@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/default_button.dart';
+import 'package:shop_app/models/Cart.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/size_config.dart';
+import 'package:shop_app/screens/cart/cart_screen.dart';
 
 import 'color_dots.dart';
 import 'product_description.dart';
@@ -27,7 +29,7 @@ class Body extends StatelessWidget {
                 pressOnSeeMore: () {},
               ),
               TopRoundedContainer(
-                color: Color(0xFFF6F7F9),
+                color: Color(0xFFECEFF1),
                 child: Column(
                   children: [
                     ColorDots(product: product),
@@ -41,8 +43,15 @@ class Body extends StatelessWidget {
                           top: getProportionateScreenWidth(15),
                         ),
                         child: DefaultButton(
-                          text: "Add To Cart",
-                          press: () {},
+                          text: "Agregar al carrito",
+                          //implementar metodo para cuando presiones agregar al carrito
+                          //se obtenga el id, la cantidad de items y el num de color => mandar al body del cart_screen
+                          press: () {
+                            var aux =[];
+                            aux.add(product.id);
+                            var a= ColorDots;
+
+                          },
                         ),
                       ),
                     ),

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/models/Cart.dart';
+import 'package:shop_app/components/coustom_bottom_nav_bar.dart';
+import 'package:shop_app/enums.dart';
+import 'bodyBotellas.dart';
 
-import 'components/body.dart';
-import 'components/check_out_card.dart';
+class Botellas extends StatelessWidget {
+  static String routeName= "./botellas";
 
-class CartScreen extends StatelessWidget {
-  static String routeName = "/cart";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
       body: Body(),
-      bottomNavigationBar: CheckoutCard(),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 
@@ -20,15 +20,12 @@ class CartScreen extends StatelessWidget {
       title: Column(
         children: [
           Text(
-            "Tu carrito",
+            "Botellas ",
             style: TextStyle(color: Colors.black),
-          ),
-          Text(
-            "${demoCarts.length} artículos",
-            style: Theme.of(context).textTheme.caption,
           ),
         ],
       ),
     );
   }
+
 }

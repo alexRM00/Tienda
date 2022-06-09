@@ -18,9 +18,9 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04), // 4%
-                Text("Register Account", style: headingStyle),
+                Text("Registrar Cuenta", style: headingStyle),
                 Text(
-                  "Complete your details or continue \nwith social media",
+                  "Llenar el formato o \ningresar con red social",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
@@ -37,6 +37,7 @@ class Body extends StatelessWidget {
                       icon: "assets/icons/facebook-2.svg",
                       press: () {},
                     ),
+
                     SocalCard(
                       icon: "assets/icons/twitter.svg",
                       press: () {},
@@ -45,7 +46,7 @@ class Body extends StatelessWidget {
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),
                 Text(
-                  'By continuing your confirm that you agree \nwith our Term and Condition',
+                  'Al continuar usted confirma y acepta \ncon nuestros Términos y Condiciones',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.caption,
                 )

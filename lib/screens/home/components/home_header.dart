@@ -25,7 +25,9 @@ class HomeHeader extends StatelessWidget {
           ),
           IconBtnWithCounter(
             svgSrc: "assets/icons/Bell.svg",
-            numOfitem: 3,
+            //numOfItem hacer valor dinámico para notificaciones
+            //implementar press para llevar a las notificaciones
+            numOfitem: 0,
             press: () {},
           ),
         ],
