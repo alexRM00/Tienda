@@ -3,6 +3,7 @@ import 'package:shop_app/components/custom_surfix_icon.dart';
 import 'package:shop_app/components/form_error.dart';
 import 'package:shop_app/helper/keyboard.dart';
 import 'package:shop_app/screens/forgot_password/forgot_password_screen.dart';
+import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/screens/login_success/login_success_screen.dart';
 
 import '../../../components/default_button.dart';
@@ -60,6 +61,7 @@ class _SignFormState extends State<SignForm> {
               Spacer(),
             ],
           ),
+          SizedBox(height: getProportionateScreenHeight(15)),
           GestureDetector(
             onTap: () => Navigator.pushNamed(
                 context, ForgotPasswordScreen.routeName),
@@ -69,7 +71,7 @@ class _SignFormState extends State<SignForm> {
             ),
           ),
           FormError(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(20)),
+          SizedBox(height: getProportionateScreenHeight(30)),
           DefaultButton(
             text: "Continuar",
             press: () {
@@ -77,7 +79,7 @@ class _SignFormState extends State<SignForm> {
                 _formKey.currentState!.save();
                 // si todos los campos son validos se envia a la success screen
                 KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                Navigator.pushNamed(context, HomeScreen.routeName);
               }
             },
           ),

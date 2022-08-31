@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/components/default_button.dart';
+import 'package:shop_app/models/Cart.dart';
+import 'package:shop_app/models/Product.dart';
+import 'cart_card.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
+//Parte de abajo de la pantalla del carrito
+int aux2= demoCarts.length;
+void sumarArticulos(aux){
+  for(int i=0; i<=aux2; i++){
+    //print(demoCarts.length);
+    //aux= demoCarts[i].product.price;
+    //print(demoCarts[]);
+  }
+  print(aux);
+}
+
 class CheckoutCard extends StatelessWidget {
+  final double aux=0;
   const CheckoutCard({
     Key? key,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,7 +64,7 @@ class CheckoutCard extends StatelessWidget {
                   child: SvgPicture.asset("assets/icons/receipt.svg"),
                 ),
                 Spacer(),
-                Text("Añadir codigo o cupón"),
+                Text("Seleccionar tarjeta"),
                 const SizedBox(width: 10),
                 Icon(
                   Icons.arrow_forward_ios,
@@ -67,8 +81,9 @@ class CheckoutCard extends StatelessWidget {
                   TextSpan(
                     text: "Total:\n",
                     children: [
+                      ///Implementar forma de sumar y restar los precios de cada articulo añadido o quitado
                       TextSpan(
-                        text: "\$337.15",
+                        text: "\$760.0",
                         style: TextStyle(fontSize: 16, color: Colors.black),
                       ),
                     ],
@@ -78,7 +93,7 @@ class CheckoutCard extends StatelessWidget {
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
                     text: "Check Out",
-                    press: () {},
+                    press: () {sumarArticulos(aux);},
                   ),
                 ),
               ],

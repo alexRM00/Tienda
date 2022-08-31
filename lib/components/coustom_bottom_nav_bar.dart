@@ -39,6 +39,7 @@ class CustomBottomNavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
+                //Boton de navegacion a la pantalla principal de la tienda
                 icon: SvgPicture.asset(
                   "assets/icons/Shop Icon.svg",
                   color: MenuState.home == selectedMenu
@@ -49,14 +50,12 @@ class CustomBottomNavBar extends StatelessWidget {
                     Navigator.pushNamed(context, HomeScreen.routeName),
               ),
               IconButton(
+                //Boton de navegacion a la ventana de articulos favoritos (no existe)
                 icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
                 onPressed: () {},
               ),
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
-              ),
-              IconButton(
+                //Boton de navegacion a la ventana de Perfil de usuario
                 icon: SvgPicture.asset(
                   "assets/icons/User Icon.svg",
                   color: MenuState.profile == selectedMenu

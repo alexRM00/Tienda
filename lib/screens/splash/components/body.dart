@@ -13,12 +13,13 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-        splash: Image.asset("assets/images/logo_soycucei.png"),
+        //splash: Image.asset("assets/images/logo_soycucei.png"),
+        splash: Image.asset("assets/images/soycucei_logoTienda.png"),
         nextScreen: SignInScreen(),
-        duration: 600,
+        duration: 150,
         splashIconSize: 700,
-        splashTransition: SplashTransition.slideTransition,
-        pageTransitionType: PageTransitionType.fade,
+        splashTransition: SplashTransition.fadeTransition,
+        pageTransitionType: PageTransitionType.leftToRight,
     );
   }
 }

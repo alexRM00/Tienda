@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-
 import '../../../constants.dart';
 import '../../../size_config.dart';
-//Implementar metodo para buscar producto
+import 'mainBusqueda.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({
     Key? key,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,6 +17,7 @@ class SearchField extends StatelessWidget {
       ),
       child: TextField(
         onChanged: (value) => print(value),
+        onSubmitted: (value)=> Navigator.pushNamed(context, mainBusqueda.routeName, arguments: {"valor": value}),
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(
                 horizontal: getProportionateScreenWidth(20),
@@ -29,6 +28,7 @@ class SearchField extends StatelessWidget {
             hintText: "Buscar producto",
             prefixIcon: Icon(Icons.search)),
       ),
+
     );
   }
 }

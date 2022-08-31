@@ -19,32 +19,14 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04), // 4%
                 Text("Registrar Cuenta", style: headingStyle),
+                SizedBox(height: getProportionateScreenHeight(15)),
                 Text(
-                  "Llenar el formato o \ningresar con red social",
+                  "Llenar el formato",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.06),
                 SignUpForm(),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SocalCard(
-                      icon: "assets/icons/google-icon.svg",
-                      press: () {},
-                    ),
-                    SocalCard(
-                      icon: "assets/icons/facebook-2.svg",
-                      press: () {},
-                    ),
-
-                    SocalCard(
-                      icon: "assets/icons/twitter.svg",
-                      press: () {},
-                    ),
-                  ],
-                ),
-                SizedBox(height: getProportionateScreenHeight(20)),
                 Text(
                   'Al continuar usted confirma y acepta \ncon nuestros Términos y Condiciones',
                   textAlign: TextAlign.center,

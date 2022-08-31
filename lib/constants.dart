@@ -25,8 +25,11 @@ const defaultDuration = Duration(milliseconds: 250);
 // Form Error
 final RegExp emailValidatorRegExp =
     RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+final RegExp telefonoValidatorRegExp=
+    RegExp(r"^\d{10}$");
 const String kEmailNullError = "Ingresar email";
 const String kInvalidEmailError = "Ingresar un email valido";
+const String kInvalaidPhoneError ="Ingresar un telefono valido";
 const String kPassNullError = "Ingresar contraseña";
 const String kShortPassError = "La contraseña es muy corta";
 const String kMatchPassError = "Las contraseñas no coinciden";

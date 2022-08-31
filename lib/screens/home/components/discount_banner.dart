@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../../../size_config.dart';
 
+//Este archivo genera el banner de imagenes que cambian en la pantalla principal
+//No es de descuentos no se confunda por el nombre
+
 class DiscountBanner extends StatelessWidget {
   const DiscountBanner({
     Key? key,
@@ -10,11 +13,11 @@ class DiscountBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      // height: 90,
       padding: EdgeInsets.only(left: 10, right: 10),
       child: Container(
           height: 150.0,
           width: double.infinity,
+          //El Widget CarouselSlider genera el banner
           child: CarouselSlider(items: [
             Container(
               decoration: BoxDecoration(
@@ -36,7 +39,8 @@ class DiscountBanner extends StatelessWidget {
             blurRadius:3.0,
             spreadRadius: 2.0,
             ),],
-            image: DecorationImage(image: AssetImage("assets/images/playera_soycucei.png"),
+            //Modificar para hacer un banner de las principales camisas
+            image: DecorationImage(image: AssetImage("assets/images/Banner_Camisas.png"),
             fit: BoxFit.cover,
             )),
             ),
@@ -48,7 +52,7 @@ class DiscountBanner extends StatelessWidget {
             blurRadius:3.0,
             spreadRadius: 2.0,
             ),],
-            image: DecorationImage(image: AssetImage("assets/images/ps4_console_blue_1.png"),
+            image: DecorationImage(image: AssetImage("assets/images/basket.jpg"),
             fit: BoxFit.cover,
             )),
             ),

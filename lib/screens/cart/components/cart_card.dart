@@ -4,6 +4,9 @@ import 'package:shop_app/models/Cart.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
+//La implementacion de como se visualizan cada articulo dentro del carrito
+//El diseño de la letra, el precio, y las imagenes a mostrar
+
 class CartCard extends StatelessWidget {
   const CartCard({
     Key? key,

@@ -46,14 +46,15 @@ class _SignUpFormState extends State<SignUpForm> {
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(30)),
           buildConformPassFormField(),
+          SizedBox(height: getProportionateScreenHeight(30)),
           FormError(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(40)),
+          //SizedBox(height: getProportionateScreenHeight(40)),
           DefaultButton(
             text: "Continuar",
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                // si todos los campos son validos, se envia a success screen
+                // si todos los campos son validos, se envia a otros campos a llenar
                 Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             },

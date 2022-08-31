@@ -5,6 +5,11 @@ import 'package:shop_app/models/Product.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
+//Intentar añadir un Gesture Detector para seleccionar cada color de articulo
+// y al momento de hacer click que se agregue la Box Decoration
+//https://stackoverflow.com/questions/60706806/get-click-inside-of-container-in-flutter
+//https://api.flutter.dev/flutter/widgets/GestureDetector-class.html
+
 class ColorDots extends StatefulWidget {
   const ColorDots({
     Key? key,
@@ -18,15 +23,18 @@ class ColorDots extends StatefulWidget {
 }
 
 class _ColorDotsState extends State<ColorDots> {
+  //Variable para seleccionar el numero de prendas
   int numeroPrenda= 0;
   @override
   Widget build(BuildContext context) {
     int selectedColor = 0;
+    //funcion para aumentar la cantidad de la variable numeroPrenda
     addPrenda(){
       setState(() {
          numeroPrenda++;
       });
     }
+    //funcion para quitar cantidad de la variable numeroPrenda
     lessPrenda(){
       setState(() {
         if(numeroPrenda!=0)
@@ -44,7 +52,7 @@ class _ColorDotsState extends State<ColorDots> {
             //y cada circulo encerrarlo en un margen negro
             (index) => ColorDot(
               color: widget.product.colors[index],
-              isSelected: index == selectedColor,
+              //isSelected: index == selectedColor,
             ),
           ),
           Spacer(),
@@ -84,6 +92,7 @@ class ColorDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       margin: EdgeInsets.only(right: 2),
       padding: EdgeInsets.all(getProportionateScreenWidth(8)),

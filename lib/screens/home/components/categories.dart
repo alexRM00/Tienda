@@ -8,7 +8,7 @@ import 'package:shop_app/screens/home/components/categoriaMorral.dart';
 import '../../../size_config.dart';
 
 class Categories extends StatelessWidget {
-
+//Categorias de articulos
   @override
   Widget build(BuildContext context) {
     void toCategory(categoria){

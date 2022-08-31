@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/no_account_text.dart';
-import 'package:shop_app/components/socal_card.dart';
+//import 'package:shop_app/components/socal_card.dart';
 import '../../../size_config.dart';
 import 'sign_form.dart';
 
@@ -25,14 +25,15 @@ class Body extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: getProportionateScreenHeight(20)),
                 Text(
-                  "Inicia sesión con tu email y contraseña \no continúa con una red social",
+                  "Inicia sesión con tu email y contraseña \n",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: getProportionateScreenHeight(20)),
                 SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
-                Row(
+                SizedBox(height: getProportionateScreenHeight(20)),
+                /*Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SocalCard(
@@ -48,8 +49,7 @@ class Body extends StatelessWidget {
                       press: () {},
                     ),
                   ],
-                ),
-                SizedBox(height: getProportionateScreenHeight(20)),
+                ),*/
                 NoAccountText(),
               ],
             ),
