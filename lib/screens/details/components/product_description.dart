@@ -5,6 +5,9 @@ import 'package:shop_app/models/Product.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
+//Descripcion de cada articulo
+//Tambien se muestra la existencia, el precio y el nombre
+
 class ProductDescription extends StatelessWidget {
   const ProductDescription({
     Key? key,
@@ -34,6 +37,17 @@ class ProductDescription extends StatelessWidget {
           child: Text("Existencia: "+
             product.existencia.toString(),
             style: Theme.of(context).textTheme.headline6,
+          ),
+        ),
+        Padding(
+          padding:
+          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          child: Text.rich(
+            TextSpan(
+                text: "\$"+ product.price.toString(),
+                style: TextStyle(
+                fontWeight: FontWeight.w900, color: kPrimaryColor, fontSize:20),
+              ),
           ),
         ),
         Align(

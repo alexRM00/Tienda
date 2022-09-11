@@ -9,12 +9,11 @@ import 'color_dots.dart';
 import 'product_description.dart';
 import 'top_rounded_container.dart';
 import 'product_images.dart';
+//Body de la parte de abajo de la pantalla para cada articulo (para añadir al carrito)
 
 class Body extends StatelessWidget {
   final Product product;
-
   const Body({Key? key, required this.product}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -44,13 +43,21 @@ class Body extends StatelessWidget {
                         ),
                         child: DefaultButton(
                           text: "Agregar al carrito",
-                          //implementar metodo para cuando presiones agregar al carrito
-                          //se obtenga el id, la cantidad de items y el num de color => mandar al body del cart_screen
                           press: () {
-                            var aux =[];
-                            aux.add(product.id);
-                            var a= ColorDots;
-
+                            //Se crea una variable de tipo clase Cart para
+                            //añadir al carrito cada articulo
+                            //se envia de parametros el 'producto' y el numero de prendas
+                            Cart CardAux= new Cart(product: product, numOfItem: ColorDots.getPrenda());
+                            demoCarts.add(CardAux);
+                            showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context)=> AlertDialog(
+                                title: const Text("Se añadió a tu carrito"),
+                                content: Image.asset("assets/images/comprobado.png", width: 60, height: 60),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(32.0))),
+                              ),
+                            );
                           },
                         ),
                       ),

@@ -6,6 +6,7 @@ import '../../../size_config.dart';
 import 'cart_card.dart';
 
 //Body de la pantalla del carrito
+//Aqui se eliminan los articulos y se muestra info de cada articulo
 
 class Body extends StatefulWidget {
   @override
@@ -24,12 +25,14 @@ class _BodyState extends State<Body> {
           padding: EdgeInsets.symmetric(vertical: 10),
           //Widget para eliminar articulos
           child: Dismissible(
-            key: Key(demoCarts[index].product.id.toString()),
+            //key: Key(demoCarts[index].product.id.toString()),
+            key: UniqueKey(),
             direction: DismissDirection.endToStart,
             onDismissed: (direction) {
               setState(() {
                 demoCarts.removeAt(index);
               });
+              Cart.sumarProductos();
             },
             background: Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -44,7 +47,6 @@ class _BodyState extends State<Body> {
                 ],
               ),
             ),
-            ///Modificar el demoCarts[index] de ahi provienen los articulos
             child: CartCard(cart: demoCarts[index]),
           ),
         ),

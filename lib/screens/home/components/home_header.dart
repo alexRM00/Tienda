@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
+import 'package:shop_app/screens/home/components/notificaciones.dart';
 import '../../../size_config.dart';
 import 'icon_btn_with_counter.dart';
 import 'search_field.dart';
@@ -25,9 +26,10 @@ class HomeHeader extends StatelessWidget {
           IconBtnWithCounter(
             svgSrc: "assets/icons/Bell.svg",
             //numOfItem hacer valor dinámico para notificaciones
-            //implementar press para llevar a las notificaciones
             numOfitem: 0,
-            press: () {},
+            press: () {
+              Navigator.pushNamed(context, notificaciones.routeName);
+            },
           ),
         ],
       ),

@@ -5,6 +5,8 @@ import 'package:shop_app/models/Product.dart';
 import '../../../size_config.dart';
 import 'section_title.dart';
 
+//Quitar el corazon de producto popular para que los usuarios no le den like
+//pero dejar los articulos al principio de la tienda en popular_product
 class PopularProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

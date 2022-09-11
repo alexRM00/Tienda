@@ -17,7 +17,7 @@ class _BodyState extends State<Body> {
         splash: Image.asset("assets/images/soycucei_logoTienda.png"),
         nextScreen: SignInScreen(),
         duration: 150,
-        splashIconSize: 700,
+        splashIconSize: 3000,
         splashTransition: SplashTransition.fadeTransition,
         pageTransitionType: PageTransitionType.leftToRight,
     );

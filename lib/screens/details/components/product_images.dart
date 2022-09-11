@@ -3,6 +3,7 @@ import 'package:shop_app/models/Product.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
+//De esta manera se ven las imagenes de cada articulo
 
 class ProductImages extends StatefulWidget {
   const ProductImages({
@@ -18,17 +19,27 @@ class ProductImages extends StatefulWidget {
 
 class _ProductImagesState extends State<ProductImages> {
   int selectedImage = 0;
+  final controller= TransformationController();
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(
-          width: getProportionateScreenWidth(238),
+          width: getProportionateScreenWidth(400),
           child: AspectRatio(
             aspectRatio: 1,
             child: Hero(
               tag: widget.product.id.toString(),
-              child: Image.asset(widget.product.images[selectedImage]),
+              //Widget para hacer zoom
+              child: InteractiveViewer(
+                transformationController: controller,
+                minScale: 0.1,
+                maxScale: 2.4,
+                onInteractionEnd: (ScaleEndDetails endDetails){
+                  controller.value= Matrix4.identity();
+                },
+                child: Image.asset(widget.product.images[selectedImage]),
+                ),
             ),
           ),
         ),

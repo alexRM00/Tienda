@@ -2,6 +2,7 @@
 
 import 'package:flutter/widgets.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
+import 'package:shop_app/screens/cart/components/Tarjetas.dart';
 import 'package:shop_app/screens/complete_profile/complete_profile_screen.dart';
 import 'package:shop_app/screens/details/details_screen.dart';
 import 'package:shop_app/screens/forgot_password/forgot_password_screen.dart';
@@ -10,6 +11,7 @@ import 'package:shop_app/screens/home/components/categoriaCamisas.dart';
 import 'package:shop_app/screens/home/components/categoriaDeportes.dart';
 import 'package:shop_app/screens/home/components/categoriaMorral.dart';
 import 'package:shop_app/screens/home/components/mainBusqueda.dart';
+import 'package:shop_app/screens/home/components/notificaciones.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/screens/login_success/login_success_screen.dart';
 import 'package:shop_app/screens/otp/otp_screen.dart';
@@ -38,4 +40,6 @@ final Map<String, WidgetBuilder> routes = {
   Deportes.routeName: (context)=>Deportes(),
   Morral.routeName: (context)=>Morral(),
   mainBusqueda.routeName:(context)=>mainBusqueda(),
+  Tarjetas.routeName:(context)=> Tarjetas(),
+  notificaciones.routeName:(context)=> notificaciones(),
 };

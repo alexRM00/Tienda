@@ -3,29 +3,26 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/models/Cart.dart';
 import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/screens/cart/components/Tarjetas.dart';
 import 'cart_card.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
 //Parte de abajo de la pantalla del carrito
-int aux2= demoCarts.length;
-void sumarArticulos(aux){
-  for(int i=0; i<=aux2; i++){
-    //print(demoCarts.length);
-    //aux= demoCarts[i].product.price;
-    //print(demoCarts[]);
-  }
-  print(aux);
+
+class CheckoutCard extends StatefulWidget {
+  @override
+  State<CheckoutCard> createState() => _CheckoutCardState();
 }
 
-class CheckoutCard extends StatelessWidget {
-  final double aux=0;
-  const CheckoutCard({
-    Key? key,
-  }) : super(key: key);
+class _CheckoutCardState extends State<CheckoutCard> {
+  static double cantidadTotal=0;
   @override
   Widget build(BuildContext context) {
+    setState((){
+      cantidadTotal= Cart.aux;
+    });
     return Container(
       padding: EdgeInsets.symmetric(
         vertical: getProportionateScreenWidth(15),
@@ -61,16 +58,17 @@ class CheckoutCard extends StatelessWidget {
                     color: Color(0xFFF5F6F9),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: SvgPicture.asset("assets/icons/receipt.svg"),
+                  child: GestureDetector(
+                    child: SvgPicture.asset("assets/icons/receipt.svg"),
+                    onTap: (){
+                      Navigator.pushNamed(context, Tarjetas.routeName);
+                    },
+                  ),
                 ),
-                Spacer(),
+                SizedBox(width: 10),
+                //Spacer(),
                 Text("Seleccionar tarjeta"),
                 const SizedBox(width: 10),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 12,
-                  color: kTextColor,
-                )
               ],
             ),
             SizedBox(height: getProportionateScreenHeight(20)),
@@ -83,8 +81,8 @@ class CheckoutCard extends StatelessWidget {
                     children: [
                       ///Implementar forma de sumar y restar los precios de cada articulo añadido o quitado
                       TextSpan(
-                        text: "\$760.0",
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        text: "\$"+ cantidadTotal.toString(),
+                        style: TextStyle(fontSize: 16, color: Colors.red, fontWeight: FontWeight.w800),
                       ),
                     ],
                   ),
@@ -93,7 +91,7 @@ class CheckoutCard extends StatelessWidget {
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
                     text: "Check Out",
-                    press: () {sumarArticulos(aux);},
+                    press: () {Cart.sumarProductos();},
                   ),
                 ),
               ],
