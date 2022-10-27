@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
+//Estilo para el titulo de Productos destacados
 
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
@@ -22,13 +23,6 @@ class SectionTitle extends StatelessWidget {
           style: TextStyle(
             fontSize: getProportionateScreenWidth(18),
             color: Colors.black,
-          ),
-        ),
-        GestureDetector(
-          onTap: press,
-          child: Text(
-            "Ver más",
-            style: TextStyle(color: Color(0xFFBBBBBB)),
           ),
         ),
       ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_app/models/Cart.dart';
+import 'check_out_card.dart';
 
 import '../../../size_config.dart';
 import 'cart_card.dart';
@@ -16,6 +17,11 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
+    void activated(){
+      setState(() {
+        Cart.aux= CheckoutCard.getTotal();
+      });
+    }
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
@@ -33,6 +39,7 @@ class _BodyState extends State<Body> {
                 demoCarts.removeAt(index);
               });
               Cart.sumarProductos();
+              //activated();
             },
             background: Container(
               padding: EdgeInsets.symmetric(horizontal: 20),

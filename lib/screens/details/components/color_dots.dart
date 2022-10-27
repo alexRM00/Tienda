@@ -5,6 +5,9 @@ import 'package:shop_app/models/Product.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
+//Clase que muestra los colores del articulo
+//Ademas de seleccionar el numero de prendas
+
 class ColorDots extends StatefulWidget {
   const ColorDots({
     Key? key,

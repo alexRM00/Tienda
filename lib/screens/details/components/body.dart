@@ -47,17 +47,21 @@ class Body extends StatelessWidget {
                             //Se crea una variable de tipo clase Cart para
                             //añadir al carrito cada articulo
                             //se envia de parametros el 'producto' y el numero de prendas
-                            Cart CardAux= new Cart(product: product, numOfItem: ColorDots.getPrenda());
-                            demoCarts.add(CardAux);
-                            showDialog<String>(
-                              context: context,
-                              builder: (BuildContext context)=> AlertDialog(
-                                title: const Text("Se añadió a tu carrito"),
-                                content: Image.asset("assets/images/comprobado.png", width: 60, height: 60),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(32.0))),
-                              ),
-                            );
+                            if(ColorDots.getPrenda() > 0 && ColorDots.getPrenda() < product.existencia){
+                              Cart CardAux= new Cart(product: product, numOfItem: ColorDots.getPrenda());
+                              demoCarts.add(CardAux);
+                              Cart.sumarProductos();
+                              showDialog<String>(
+                                context: context,
+                                builder: (BuildContext context)=> AlertDialog(
+                                  title: const Text("Se añadió a tu carrito"),
+                                  content: Image.asset("assets/images/comprobado.png", width: 60, height: 60),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(32.0))),
+                                ),
+                              );
+                            }
+
                           },
                         ),
                       ),

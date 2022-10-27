@@ -63,7 +63,8 @@ class ProductCard extends StatelessWidget {
                       color: kPrimaryColor,
                     ),
                   ),
-                  InkWell(
+                  //Parte para like
+                  /*InkWell(
                     borderRadius: BorderRadius.circular(50),
                     onTap: () {},
                     child: Container(
@@ -83,7 +84,7 @@ class ProductCard extends StatelessWidget {
                             : Color(0xFFDBDEE4),
                       ),
                     ),
-                  ),
+                  ),*/
                 ],
               )
             ],

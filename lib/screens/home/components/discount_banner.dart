@@ -39,7 +39,6 @@ class DiscountBanner extends StatelessWidget {
             blurRadius:3.0,
             spreadRadius: 2.0,
             ),],
-            //Modificar para hacer un banner de las principales camisas
             image: DecorationImage(image: AssetImage("assets/images/Banner_Camisas.png"),
             fit: BoxFit.cover,
             )),
@@ -52,7 +51,7 @@ class DiscountBanner extends StatelessWidget {
             blurRadius:3.0,
             spreadRadius: 2.0,
             ),],
-            image: DecorationImage(image: AssetImage("assets/images/basket.jpg"),
+            image: DecorationImage(image: AssetImage("assets/images/20220914_144547_001.jpg"),
             fit: BoxFit.cover,
             )),
             ),

@@ -14,6 +14,9 @@ import '../../../size_config.dart';
 class CheckoutCard extends StatefulWidget {
   @override
   State<CheckoutCard> createState() => _CheckoutCardState();
+  static double getTotal(){
+    return _CheckoutCardState.cantidadTotal;
+  }
 }
 
 class _CheckoutCardState extends State<CheckoutCard> {
@@ -79,7 +82,7 @@ class _CheckoutCardState extends State<CheckoutCard> {
                   TextSpan(
                     text: "Total:\n",
                     children: [
-                      ///Implementar forma de sumar y restar los precios de cada articulo añadido o quitado
+                      ///Implementar forma de atualizar los precios
                       TextSpan(
                         text: "\$"+ cantidadTotal.toString(),
                         style: TextStyle(fontSize: 16, color: Colors.red, fontWeight: FontWeight.w800),
@@ -91,7 +94,7 @@ class _CheckoutCardState extends State<CheckoutCard> {
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
                     text: "Check Out",
-                    press: () {Cart.sumarProductos();},
+                    press: () {},
                   ),
                 ),
               ],

@@ -23,8 +23,9 @@ final headingStyle = TextStyle(
 const defaultDuration = Duration(milliseconds: 250);
 
 // Form Error
-final RegExp emailValidatorRegExp =
-    RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+//Validador Regex de email
+final RegExp emailValidatorRegExp = RegExp(r"[0-9]");
+    //RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 final RegExp telefonoValidatorRegExp=
     RegExp(r"^\d{10}$");
 const String kEmailNullError = "Ingresar email";

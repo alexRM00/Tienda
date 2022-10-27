@@ -50,7 +50,8 @@ class ProductDescription extends StatelessWidget {
               ),
           ),
         ),
-        Align(
+        //Parte para like
+        /*Align(
           alignment: Alignment.centerRight,
           child: Container(
             padding: EdgeInsets.all(getProportionateScreenWidth(15)),
@@ -70,7 +71,7 @@ class ProductDescription extends StatelessWidget {
               height: getProportionateScreenWidth(16),
             ),
           ),
-        ),
+        ),*/
         Padding(
           padding: EdgeInsets.only(
             left: getProportionateScreenWidth(20),

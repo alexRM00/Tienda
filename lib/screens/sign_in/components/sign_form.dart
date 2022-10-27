@@ -77,7 +77,7 @@ class _SignFormState extends State<SignForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                // si todos los campos son validos se envia a la success screen
+                // si todos los campos son validos se envia al HomeScreen
                 KeyboardUtil.hideKeyboard(context);
                 Navigator.pushNamed(context, HomeScreen.routeName);
               }
@@ -95,7 +95,8 @@ class _SignFormState extends State<SignForm> {
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPassNullError);
-        } else if (value.length >= 8) {
+          //Validador para formato password
+        } else if (value.length >= 1) {
           removeError(error: kShortPassError);
         }
         return null;
@@ -104,7 +105,7 @@ class _SignFormState extends State<SignForm> {
         if (value!.isEmpty) {
           addError(error: kPassNullError);
           return "";
-        } else if (value.length < 8) {
+        } else if (value.length < 1) {
           addError(error: kShortPassError);
           return "";
         }
@@ -128,6 +129,7 @@ class _SignFormState extends State<SignForm> {
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kEmailNullError);
+          //Validador para formato email
         } else if (emailValidatorRegExp.hasMatch(value)) {
           removeError(error: kInvalidEmailError);
         }
